@@ -97,8 +97,7 @@ onUnmounted(() => {
     <div v-else class="chat__no-selection">
       Выберите, кому хотели бы написать !
       <a href="https://t.me/tiwehub" class="chat__link">Разработал: Малютин Т.А.</a>
-      <a href="https://t.me/tiwehub" class="chat__link">Демо</a>
-      <a href="https://t.me/tiwehub" class="chat__link">Github</a>
+      <a href="https://t.me/tiwehub" class="https://github.com/tiwehub/chat-app.git">Github</a>
       <p class="chat__no-selection-date">26.03.2024</p>
     </div>
     <div class="chat__messages" ref="messagesContainer">
