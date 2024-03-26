@@ -1,0 +1,213 @@
+body {
+  font-family: Montserrat;
+  background-color: #212121;
+}
+
+//UserSelect.vue
+.user-card {
+  @apply flex justify-center items-center h-screen select-none;
+
+  &__container {
+    @apply w-full max-w-md bg-[#2b2b2b] shadow-lg rounded-lg p-5 mx-2 sm:mx-0;
+    border: 1px solid #eceff133;
+  }
+  &__title {
+    @apply text-white text-lg mb-4 text-center font-medium;
+  }
+  &__item {
+    @apply flex items-center justify-between mb-4 last:mb-0 p-2 opacity-0;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transform: translateY(-10px);
+  }
+  &__info {
+    @apply flex items-center;
+  }
+  &__avatar {
+    @apply rounded-full w-16 h-16 mr-4 border-2 border-gray-200 transition-all duration-300 ease-in-out cursor-pointer;
+  }
+  &__avatar:hover {
+    @apply hover:border-blue-600;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  }
+  & &__username {
+    @apply text-sm font-semibold text-white;
+  }
+  &__fullname {
+    @apply text-xs text-gray-300;
+  }
+  &__button {
+    @apply py-2 px-4 text-white font-bold rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-500 ease-in-out;
+    border: 1px solid #eceff133;
+  }
+}
+
+//ChatList.vue
+.chats-container {
+  @apply relative md:w-3/5 md:ml-40 p-4 overflow-y-auto mt-10 md:mt-0 w-full;
+
+  .message {
+    @apply flex items-center p-2 hover:bg-gray-700 cursor-pointer rounded-lg mb-1;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    &:hover {
+      @apply shadow-lg bg-[#2b2b2b];
+    }
+    cursor: pointer;
+    border-radius: 0.375rem;
+
+    .chat__avatar {
+      @apply h-10 w-10 rounded-full mr-4;
+    }
+
+    .chat__info {
+      .chat__name {
+        @apply text-white font-semibold;
+      }
+
+      .chat__last-message {
+        @apply text-gray-400 max-[480px]:w-[200px] sm:w-[300px] md:w-[350px] xl:w-[500px] text-sm overflow-hidden overflow-ellipsis whitespace-nowrap;
+      }
+    }
+
+    .chat__time {
+      @apply ml-auto mt-auto text-gray-200 text-xs max-[350px]:hidden;
+    }
+  }
+}
+
+//ChatArea.vue
+.chat {
+  @apply bg-[#2b2b2b] flex-1 px-4 overflow-y-auto md:rounded-s-3xl shadow-lg;
+
+  &__header {
+    @apply py-4 flex items-center border-b border-white mb-5;
+  }
+
+  &__avatar {
+    @apply h-10 w-10 rounded-full mr-3;
+  }
+
+  &__name {
+    @apply text-white font-semibold;
+  }
+
+  &__no-selection {
+    @apply mt-4 p-4 text-white uppercase font-semibold bg-[#212121] rounded-lg text-xs flex flex-col;
+
+    &-date {
+      @apply ml-auto;
+    }
+  }
+
+  &__link {
+    @apply underline hover:text-blue-600 duration-300 transition-all ease-in-out;
+  }
+
+  &__messages {
+    @apply flex-1 overflow-y-auto;
+    height: calc(100% - 160px);
+  }
+
+  &__message {
+    align-self: flex-start;
+    background-color: #e5e5ea;
+    color: #000000;
+    padding: 10px;
+    border-radius: 10px 10px 10px 0px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    max-width: 70%;
+
+    &--mine {
+      @apply bg-blue-600 text-white;
+      align-self: flex-end;
+      max-width: 70%;
+      padding: 10px;
+      border-radius: 10px 10px 0px 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      margin-left: auto;
+      word-wrap: break-word;
+      text-align: justify;
+      width: fit-content;
+    }
+  }
+
+  &__input-area {
+    @apply flex items-center mb-5;
+  }
+
+  &__input {
+    @apply w-full p-2 rounded text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-500 ease-in-out self-center;
+    border: 1px solid #eceff133;
+  }
+
+  &__send-button {
+    @apply py-2 px-4 text-white font-bold rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-500 ease-in-out self-center;
+    border: 1px solid #eceff133;
+  }
+}
+
+//UserPanel.vue
+.sidebar {
+  @apply bg-[#2b2b2b] text-white w-4/5 md:w-40 h-full fixed flex flex-col z-10 md:rounded-r-3xl shadow-lg;
+
+  &__content {
+    @apply flex-grow;
+  }
+
+  &__user-info {
+    @apply flex flex-col items-center mt-5;
+  }
+
+  &__avatar {
+    @apply rounded-full w-16 h-16 border-2 border-gray-200 transition-all duration-300 ease-in-out cursor-pointer mb-2;
+  }
+
+  &__user-text {
+    @apply flex flex-col gap-1;
+  }
+
+  &__name,
+  &__username {
+    @apply text-sm font-semibold text-white text-center;
+  }
+
+  &__username {
+    @apply text-xs text-gray-300;
+  }
+
+  &__logout-button {
+    @apply py-2 px-4 text-white font-bold rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-500 ease-in-out self-center mb-4;
+    border: 1px solid #eceff133;
+  }
+
+  &__toggle-button {
+    @apply hidden md:block absolute top-1/2 right-[-20px] transform -translate-y-1/2 bg-[#656363] p-1 rounded-full py-8 px-1;
+  }
+
+  &__mobile-toggle {
+    @apply absolute right-4 top-6 md:hidden w-8 h-8 z-10;
+  }
+}
+
+//scroll
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+
+  &:hover {
+    background: #555;
+  }
+}
