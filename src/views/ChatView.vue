@@ -23,7 +23,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="flex h-screen">
+  <div class="flex h-[93vh] sm:h-screen">
     <UserPanel />
     <ChatList v-if="!userStore.isChatAreaVisible || windowWidth >= 768" />
     <ChatArea v-if="userStore.isChatAreaVisible || windowWidth >= 768" />

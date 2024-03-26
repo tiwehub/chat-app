@@ -5,7 +5,7 @@ body {
 
 //UserSelect.vue
 .user-card {
-  @apply flex justify-center items-center h-screen select-none;
+  @apply flex justify-center items-center h-[93vh] sm:h-screen select-none;
 
   &__container {
     @apply w-full max-w-md bg-[#2b2b2b] shadow-lg rounded-lg p-5 mx-2 sm:mx-0;
